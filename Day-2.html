@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+
+<html>
+<body>
+    <script>
+
+        function date() {
+
+            console.log(Date());
+        }
+        function number() {
+            var a = parseInt(document.getElementById("number").value);
+            if (a > 10 && a < 100)
+                alert("The number is in between 10-100");
+            else
+                alert("The number is not in between 10-100");
+        }
+        /*function number1() {
+            var b = parseInt(document.getElementById("number").value);
+
+            switch (true) {
+                case (b>0):
+                    alert("Number is greater than 10 and less than hundred");
+                    break;
+                case (b < 100):
+                    alert("Number is valid");
+                default:
+                    alert("Number is invalid");
+            }
+
+        }*/
+        function fibbonaci() {
+            var a = 0, b = 1, c;
+            var num = parseInt(document.getElementsById("fib").value);
+            while (num) {
+                document.write(a + "");
+                c = a + b;
+                a = b;
+                b = c;
+                num = num - 1;
+
+            }
+        }
+        function err() {
+            var text, a;
+            msg = document.getElementById("p1");
+            msg1 = document.getElementById("p2");
+            a = document.getElementById("err").value;
+            try {
+                if (x == "") throw "empty";
+                if (isNaN(x)) throw "not a number";
+                a = Number(a);
+                if (a < 1) throw "low";
+                if (a > 10) throw "high";
+            }
+            catch (err) {
+                msg.innerHTML = "Input is " + err;
+            }
+            finally {
+                msg1.innerHTML = "Finally Block Executed:";
+            }
+
+        }
+
+
+        function count() {
+            var V = document.getElementById("five");
+            var VII = document.getElementById("seven");
+            var X= document.getElementById("ten");
+            var st = "JavaScript is a dynamic programming languague.It is used in many applications ";
+            var res = st.split("");
+            var fif = res[6];
+            var sev = res[8];
+            var ten = res[11];
+            V.innerHTML = "<h4>5<sup>th</sup>word:" + fif + "</h4>";
+            VII.innerHTML = "<h4>7<sup>th</sup>word:" + sev + "</h4>";
+            X.innerHTML = "<h4>10<sup>th</sup>word:" + ten + "</h4>";
+        }
+
+    </script>
+
+    <button onclick="date()"> Date in console</button>
+    <hr />
+    Enter Number:<input type="text" id="number">
+    <button onclick="number()">check</button><br /><br />
+    <hr />
+    <h4>Error handling</h4>
+    <input id="err" type="text" />
+    <button type="button" onclick="err()">Check</button>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    </hr>
+    <p id="count">
+        JavaScript is a dynamic programming languague.It is used in many applications
+    </p>
+    <button onclick="count()">Click</button>
+    <span id="fif"></span>
+    <span id="sev"></span>
+    <span id=" ten"></span>
+
+
+
+
+
+</body>
+</html>
